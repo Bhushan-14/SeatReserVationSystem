@@ -1,0 +1,18 @@
+<div class="seat-layout">
+  <div *ngFor="let seat of allSeats; let i = index" [class.reserved]="seat.reserved">
+    {{ seat.id }}
+    <ng-container *ngIf="(i + 1) % 7 === 0 && i < allSeats.length - 1">
+      <br />
+    </ng-container>
+  </div>
+</div>
+
+<div class="controls">
+  <input type="number" [(ngModel)]="requestedSeats" min="1" max="7" placeholder="Seats to reserve" />
+  <button (click)="onReserveSeats()">Reserve Seats</button>
+</div>
+
+<div *ngIf="reservedSeatIds.length > 0">
+  <h3>Reserved Seats:</h3>
+  <p>{{ reservedSeatIds.join(', ') }}</p>
+</div>

@@ -1,0 +1,26 @@
+q2q/* Styles for seat layout */
+.seat-layout {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.seat-layout div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.seat-layout div.reserved {
+  background-color: red;
+  color: white;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
